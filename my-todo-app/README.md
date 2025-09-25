@@ -1,46 +1,103 @@
-# Getting Started with Create React App
+# React + TypeScript To-Do App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple To-Do application built with **React** and **TypeScript**.  
+Add, edit, toggle, and delete tasks with a friendly interface and simulated API.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- **Node.js** v16 or higher  
+- **npm** (comes with Node)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. **Clone the repository**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/LynNyandoro/To-Do-Application.git
+cd my-todo-app
+````
 
-### `npm run build`
+2. **Install dependencies**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the App
 
-### `npm run eject`
+Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open your browser and navigate to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+http://localhost:3000
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You should see the To-Do app running. Now you can **add, edit, toggle, and delete tasks**.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Building for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+This will generate a `build/` folder with all the production-ready assets.
+
+---
+
+## Notes
+
+* The app uses a **mock API**, so data will **not persist across page reloads**.
+* Network delays and errors are simulated to mimic real API behavior.
+* Components include:
+
+  * `AddTodoForm` — Form for adding new tasks
+  * `TodoList` — Displays all tasks
+  * `TodoItem` — Handles editing, toggling, and deleting tasks
+
+---
+
+## Project Folder Structure
+
+todo-react-ts/
+├─ node_modules/                 # Installed dependencies
+├─ public/
+│  ├─ index.html                 # Main HTML file
+│  └─ favicon.ico                # App icon
+├─ src/
+│  ├─ api/
+│  │  └─ mockAPI.ts              # Simulated API calls (GET, POST, UPDATE, DELETE)
+│  ├─ components/
+│  │  ├─ AddTodoForm.tsx         # Form to add new todos
+│  │  ├─ TodoItem.tsx            # Single todo item with edit/delete/toggle
+│  │  └─ TodoList.tsx            # List of todos, maps over TodoItem
+│  ├─ interfaces/
+│  │  └─ todo.ts                 # TypeScript interfaces (Todo, ApiResponse)
+│  ├─ pages/
+│  │  └─ Home.tsx                # Main page, handles state and API interactions
+│  ├─ utils/
+│  │  └─ helpers.ts              # Helper functions (truncate, filter, simulate errors)
+│  ├─ App.tsx                     # Root App component
+│  ├─ index.tsx                   # Entry point for React app
+│  └─ index.css                   # Global styles
+├─ .gitignore                     # Git ignore rules
+├─ package.json                   # Project dependencies & scripts
+├─ tsconfig.json                  # TypeScript configuration
+└─ README.md                      # Project instructions
+
+
+```
